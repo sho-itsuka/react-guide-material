@@ -9,14 +9,15 @@ const b = false;
 //   resultA = "false";
 // }
 
-//上記if文を書き換え
+// 上記if文を書き換え
 let resultA = a ? "true" : "false" ;
 let resultB = b ? 10     : -10 ;
 console.log(resultA);
 console.log(resultB);
 
-// function getResult() {
-//   return a ? "true" : "false";
-// }
+// returnの後ろに続くことがよくある
+function getResult() {
+  return a ? "true" : "false";
+}
 
-// console.log(getResult());
+console.log(getResult());
