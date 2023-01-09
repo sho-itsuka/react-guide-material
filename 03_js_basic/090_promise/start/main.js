@@ -15,4 +15,10 @@ new Promise((resolve, reject) => {
   }, 2000)
 }).then((b) => {
   console.log(b);
+  return b;
+}).then((b) => {
+  console.log(b);
+  return b;
+}).then((b) => {
+  console.log(b);
 })
