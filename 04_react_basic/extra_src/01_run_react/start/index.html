@@ -9,10 +9,20 @@
     <div id="app"></div>
     <script type="text/babel">
       const appEl = document.querySelector('#app');
-      // ReactDOMというライブラリから、rootを作成
       const root  = ReactDOM.createRoot(appEl);
-      // render()メソッドの中に記述した内容がappのdivタグ内に反映される
-      root.render(<h1>こんにちは</h1>);
+      // function Example() {
+      //   return <h1>Hello React</h1>;
+      // }
+
+      // 以下は、上記コードをアロー関数に書き換え
+      // const Example = () => {
+      //   return <h1>Hello React</h1>;
+      // }
+      
+      // アロー関数を簡略化
+      const Example = () => <h1>Hello React</h1>;
+      
+      root.render(<Example/>);
     </script>
   </body>
 </html>
