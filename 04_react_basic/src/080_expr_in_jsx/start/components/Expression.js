@@ -4,7 +4,9 @@ const Expression = () => {
   const title  = "Expression";
   const arry   = ['item1', 'item2', 'item3'];
   const hello  = (arg) => `${arg} Function`;
-  const jsx    = <h3>Hello JSX</h3>
+  const jsx    = <h3>Hello JSX</h3>;
+  // Boolean値は表示されない
+  const bool = true;
 
   return (
     <div className={title.toLowerCase()}>
@@ -14,6 +16,7 @@ const Expression = () => {
       <h3>{/* 画面上には表示されない */}</h3>
       {<h3>Hello JSX</h3>}
       {jsx}
+      {bool}
     </div>
   )
 };
