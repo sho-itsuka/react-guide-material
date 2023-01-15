@@ -1,11 +1,15 @@
-import "./Child.css";
+import "./Expression.css";
 
-const Child = () => {
+const Expression = () => {
+  const title = "Expression";
+  const arry = ['item1', 'item2', 'item3'];
+
   return (
-    <div className="component">
-      <h3>Hello Component</h3>
+    <div className={title.toLowerCase()}>
+      <h3>Hello {title}</h3>
+      <h3>{arry}</h3>
     </div>
-  );
+  )
 };
 
-export default Child;
+export default Expression;
