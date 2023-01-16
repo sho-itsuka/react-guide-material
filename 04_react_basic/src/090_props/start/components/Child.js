@@ -5,9 +5,18 @@
 
 import "./Child.css";
 
-const Child = () => {
+// const Child = (props) => {
+//   return (
+//     <div className={`component ${props.color}`}>
+//       <h3>Hello Component</h3>
+//     </div>
+//   );
+// };
+
+// 上記の書き換え(JSの分割代入)
+const Child = ({ color }) => {
   return (
-    <div className="component">
+    <div className={`component ${color}`}>
       <h3>Hello Component</h3>
     </div>
   );
