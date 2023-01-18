@@ -1,9 +1,9 @@
 .App-start .profile {
-  border: 3px solid blue;
-  color: blue;
+  border:        3px solid blue;
+  color:         blue;
   border-radius: 20px;
-  text-align: center;
-  font-weight: 600;
+  text-align:    center;
+  font-weight:   600;
   margin-bottom: 1.5rem;
 }
 .App-start .profile p {
@@ -11,5 +11,5 @@
 }
 .App-start .profile.red {
   border: 3px solid red;
-  color: red;
+  color:  red;
 }
