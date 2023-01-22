@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Example = () => {
-  const orderObj = { item: 'apple', count: 10 };
+  const orderObj   = { item: 'apple', count: 10 };
   const [order, setOrder] = useState(orderObj);
 
   const changeItem = (e) => {
