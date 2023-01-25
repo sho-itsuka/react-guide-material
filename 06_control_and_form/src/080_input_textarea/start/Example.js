@@ -1,10 +1,15 @@
 const Example = () => {
   return (
-    <p style={{ textAlign: "center" }}>
-      startフォルダの内容が表示されます。
-      <br />
-      練習用に使ってください！
-    </p>
+    <div>
+      <label htmlFor="456">ラベル</label>
+      <div>
+        <input
+          type="text"
+          placeholder="こんにちは"
+          
+          />
+      </div>
+    </div>
   );
 };
 
