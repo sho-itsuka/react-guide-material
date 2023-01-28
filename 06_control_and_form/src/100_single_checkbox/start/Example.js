@@ -2,19 +2,30 @@ import { useState } from "react";
 
 const Example = () => {
   const [checkVal, setCheckVal] = useState();
-  const onChange = (e) => setCheckVal(e.target.value);
+  const toggleChecked = (e) => {
+    // 仮にtrue が渡ってきたら、false を返す
+    // setCheckVal((prev) => {
+    //   const state = !prev;
+    //   return state;
+    // });
+
+    // 上記を簡略化
+    setCheckVal(prev => !prev);
+  };
 
   return (
     <>
       <label htmlFor="check">
         チェック:
-        <input
-          id="check"
-          type="checkbox"
-          value={checkVal}
-          onChange={onChange}
-        />
       </label>
+      <input
+        id="check"
+        type="checkbox"
+        checked={checkVal}
+        // チェックをつけたり外したりできる
+        onChange={toggleChecked}
+      />
+      <div>{checkVal ? "ON!" : "OFF"}</div>
     </>
   );
 };
