@@ -1,10 +1,21 @@
+import { useState } from "react";
+
 const Example = () => {
+  const [checkVal, setCheckVal] = useState();
+  const onChange = (e) => setCheckVal(e.target.value);
+
   return (
-    <p style={{ textAlign: "center" }}>
-      startフォルダの内容が表示されます。
-      <br />
-      練習用に使ってください！
-    </p>
+    <>
+      <label htmlFor="check">
+        チェック:
+        <input
+          id="check"
+          type="checkbox"
+          value={checkVal}
+          onChange={onChange}
+        />
+      </label>
+    </>
   );
 };
 
