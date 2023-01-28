@@ -23,14 +23,27 @@ const Example = () => {
 
     setFruits(newFruits);
 
-    let sumVal = 0;
-    newFruits.forEach(fruit => {
-      if(fruit.checked) {
-        sumVal += fruit.value;
-      }
-    });
+    // let sumVal = 0;
+    // forEach()で実装
+    // newFruits.forEach(fruit => {
+    //   if(fruit.checked) {
+    //     sumVal += fruit.value;
+    //   }
+    // });
 
-    setSum(sumVal);
+    // filter()で実装
+    // newFruits
+      // fruitのチェックされているもののみを配列で取得
+      // .filter((fruit) => fruit.checked)
+      // それぞれのfruitを足し合わせる
+      // .forEach((fruit) => (sumVal = sumVal + fruit.value));
+    
+    // reduce()で実装
+      // 上で記述した変数sumValをコメントアウト
+      let sumVal = newFruits
+      .filter((fruit) => fruit.checked)
+      .reduce((sumVal, fruit) => sumVal = sumVal + fruit.value, 0);
+      setSum(sumVal);
   };
 
   return (
