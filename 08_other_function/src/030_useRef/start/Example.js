@@ -42,8 +42,22 @@ const Case2 = () => {
 };
 
 const Case3 = () => {
+  const createTimeStamp = () => new Date().getTime
+  const [timeStamp, setValue] = useState(createTimeStamp());
+  const ref                   = useRef(createTimeStamp());
+
+  const updateState = () => {
+    setValue(createTimeStamp());
+  }
+
+  const updateRef = () => {
+    ref.current = createTimeStamp();
+    console.log("ref.current -> ", ref.current);
+  };
+
   return (
     <>
+      <h3>ユースケース</h3>
       <button>更新1</button>
       <button>更新2</button>
     </>
