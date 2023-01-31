@@ -41,6 +41,15 @@ const Case2 = () => {
   );
 };
 
+const Case3 = () => {
+  return (
+    <>
+      <button>更新1</button>
+      <button>更新2</button>
+    </>
+  )
+}
+
 const Example = () => {
   return (
     <>
