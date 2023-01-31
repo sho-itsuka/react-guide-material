@@ -42,7 +42,7 @@ const Case2 = () => {
 };
 
 const Case3 = () => {
-  const createTimeStamp = () => new Date().getTime
+  const createTimeStamp = () => new Date().getTime();
   const [timeStamp, setValue] = useState(createTimeStamp());
   const ref                   = useRef(createTimeStamp());
 
@@ -52,14 +52,19 @@ const Case3 = () => {
 
   const updateRef = () => {
     ref.current = createTimeStamp();
-    console.log("ref.current -> ", ref.current);
   };
 
   return (
     <>
       <h3>ユースケース</h3>
-      <button>更新1</button>
-      <button>更新2</button>
+      <p>
+        state: {timeStamp}
+        <button onClick={updateState}>更新1</button>
+      </p>
+      <p>
+        ref: {ref.current}
+        <button onClick={updateRef}>更新2</button>
+      </p>
     </>
   )
 }
@@ -69,6 +74,7 @@ const Example = () => {
     <>
       <Case1 />
       <Case2 />
+      <Case3 />
     </>
   );
 };
