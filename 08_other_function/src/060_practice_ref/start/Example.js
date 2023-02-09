@@ -13,7 +13,7 @@ const Video = forwardRef(({ path }, ref) => {
   }));
 
   return (
-    <video style={{ maxWidth: "100%" }}>
+    <video style={{ maxWidth: "100%" }} ref={videoRef}>
       <source src={path}></source>
     </video>
   );
