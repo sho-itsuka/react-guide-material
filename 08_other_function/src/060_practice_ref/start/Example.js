@@ -29,6 +29,11 @@ const Example = () => {
       <Video ref={ref} path="./sample.mp4" />
       <button
         onClick={() => {
+          if (playing) {
+            ref.current.stop();
+          } else {
+            ref.current.play();
+          }
           setPlaying((prev) => !prev);
         }}
       >
