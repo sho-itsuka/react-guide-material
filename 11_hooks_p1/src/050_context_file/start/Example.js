@@ -1,21 +1,16 @@
-import { createContext, useState } from "react";
-
-import Header from "./components/Header";
-import Main   from "./components/Main";
+import Header            from "./components/Header";
+import Main              from "./components/Main";
+import { ThemeProvider } from "./context/ThemeContext";
 
 import "./Example.css";
 
-export const ThemeContext = createContext();
-
 const Example = () => {
-  const [theme, setTheme] = useState('light');
-
   return (
     <>
-      <ThemeContext.Provider value={[theme, setTheme]}>
+      <ThemeProvider>
         <Header />
         <Main />
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </>
   );
 };
