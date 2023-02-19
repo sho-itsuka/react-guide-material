@@ -9,6 +9,13 @@ const Example = () => {
       setTime(prev => prev + 1);
     }, 1000);
   }, [])
+
+  // 依存配列にstateを含めた場合
+  // 1秒ごとに呼ばれることになる
+  useEffect(() => {
+    document.title = 'counter:' + time;
+    window.localStorage.setItem('time-key', time);
+  }, [time])
   
   return (
     <h3>
