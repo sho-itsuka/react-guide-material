@@ -5,16 +5,16 @@ class BaseErrorBoundary extends React.Component {
     super(props);
     this.state = {
       hasError: false,
-      error: null,
-      info: null,
+      error:    null,
+      info:     null,
     };
   }
 
   componentDidCatch(error, info) {
     this.setState({
       hasError: true,
-      error: error,
-      info: info,
+      error:    error,
+      info:     info,
     });
   }
 
