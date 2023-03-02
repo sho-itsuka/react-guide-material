@@ -55,7 +55,10 @@ const Timer = () => {
     setIsRunning(prev => !prev)
   };
 
-  const reset = () => {};
+  const reset = () => {
+    setTime(0);
+    setIsRunning(false);
+  };
 
   return (
     <>
