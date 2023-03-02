@@ -1,12 +1,15 @@
 import { useEffect, useState, useLayoutEffect } from "react";
 
 const Example = () => {
-  const [isDisp, setIsDisp] = useState(true);
+  const [isDisp, setIsDisp]       = useState(true);
+  const [isRunning, setIsRunning] = useState(false);
 
   return (
     <>
       {isDisp && <Timer/>}
-      <button onClick={() => setIsDisp(prev => !prev)}>トグル</button>
+      <button onClick={() => setIsDisp(prev => !prev)}>
+        {isDisp ? '非表示' : ''}
+      </button>
     </>
   )
 }
@@ -46,12 +49,24 @@ const Timer = () => {
     }
   }, [])
 
+  const toggle = () => {
+    //setIsRunning(prev => !prev)
+  };
+
+  const reset = () => {};
+
   return (
-    <h3>
-      <time>{time}</time>
-      <span>秒経過</span>
-    </h3>
-    );
+    <>
+      <h3>
+        <time>{time}</time>
+        <span>秒経過</span>
+      </h3>
+      <div>
+        <button onClick={toggle}>スタート</button>
+        <button onClick={reset}>リセット</button>
+      </div>
+    </>
+  );
 };
 
 export default Example;
