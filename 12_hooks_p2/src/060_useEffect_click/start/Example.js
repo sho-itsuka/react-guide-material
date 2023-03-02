@@ -1,34 +1,36 @@
 import { useEffect, useState, useLayoutEffect } from "react";
 
 const Example = () => {
-  const [isDisp, setIsDisp]       = useState(true);
-  const [isRunning, setIsRunning] = useState(false);
-
+  const [isDisp, setIsDisp] = useState(true);
+  
   return (
     <>
       {isDisp && <Timer/>}
       <button onClick={() => setIsDisp(prev => !prev)}>
-        {isDisp ? '非表示' : ''}
+        {isDisp ? '非表示' : '表示'}
       </button>
     </>
   )
 }
 
 const Timer = () => {
-  const [time, setTime] = useState(0);
+  const [time, setTime]           = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
     // console.log('init');
     let intervalId = null;
-    intervalId = window.setInterval(() => {
-      // console.log('interval running');
-      setTime(prev => prev + 1);
-    }, 1000);
+    if(isRunning) {
+      intervalId = window.setInterval(() => {
+        // console.log('interval running');
+        setTime(prev => prev + 1);
+      }, 1000);
+    }
     return () => {
       window.clearInterval(intervalId)
       // console.log('end');
     }
-  }, [])
+  }, [isRunning])
   
   useEffect(() => {
     // console.log('updated');
@@ -50,7 +52,7 @@ const Timer = () => {
   }, [])
 
   const toggle = () => {
-    //setIsRunning(prev => !prev)
+    setIsRunning(prev => !prev)
   };
 
   const reset = () => {};
@@ -62,7 +64,9 @@ const Timer = () => {
         <span>秒経過</span>
       </h3>
       <div>
-        <button onClick={toggle}>スタート</button>
+        <button onClick={toggle}>
+          {isRunning ? '一時停止' : 'スタート'}
+        </button>
         <button onClick={reset}>リセット</button>
       </div>
     </>
